@@ -19,3 +19,10 @@ de manuales, links de interes y "torpedos" para ayudarme en el avance de la asig
 - Empezamos a revisar JavaScript, creación de scripts para agregar a los archivos HTML5
 - Revisamos BootStrap y DataTables para agregar estas librerías a nuestras páginas
 - Se desarrollan Actividades 1.2 y 1.3
+
+##### DUDAS
+
+1. ¿Como Ejecuto funciones de JavaScript en el HTML5?
+    - [ ] Debo Revisar el código actualizado que subió el profe para entender la sintaxis
+
+2. ¿Como puedo "Embellecer" de mejor forma mis páginas usando librerías?
