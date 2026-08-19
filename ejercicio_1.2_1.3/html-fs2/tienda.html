@@ -1,34 +1,194 @@
+<!--
+    DOCTYPE indica al nav egador que este documento utiliza HTML5
+    Debe ir siempre al principio del archivi.
+-->
+
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+    <!--
+        CSS PROPIO DEL PROYECTO
+        Enlaza el archivo style.css que se encuentra en la misma carpeta.
+
+        <link> normalmente se coloca dentro de <head> porque los estilos
+        deben cargarse antes de mostrar el contenido de la página.
+
+        href = ubicación del archivi.
+        rel="stylesheet" = indica que el archivo enlazado contiene estilos CSS.
+    
+    -->
+
         <link rel="stylesheet" href="style.css">
+
+        <!--
+            TÍTULO DE LA PÁGINA
+            Es el texto que aparece en la pestaña del navegador
+        -->
         <title>Lo quieres, lo vendo</title>
+        <!--
+            BOOTSTRAP - CSS
+            Importa los estilos de Bootstrap desde un CDN
+
+            Gracias a este archivo podemos utilizar clases como:
+            container
+            navbar
+            btn
+            form-control
+            mb-3
+            bg-primary
+            etc.
+
+            Este tipo de enlace normalmente se coloca dentro de <head>
+        -->
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+        <!--
+            BOOTSTRAP -JAVASCRIPT
+            Carga las funciones JavaScript de Bootstrap.
+
+            Es necesario para componentes interactivos de Bootstrap,
+            por ejemplo el botón que despliega/oculta el menú NavBar
+            cuando la pantalla es pequeña.
+
+            bootstrap.bundle incluye los componentes JS necesarios
+            para estos controles
+        -->
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
+        <!--
+            JAVASCRIPT PROPIO DEL PROYECTO
+            Enlaza el archivo funciones.js (en este caso) o el archivo .js del proyecto
+
+            Gracias a esta línea, este HTML puede utuilizar las funciones
+            declaradas dentro de funciones.js
+
+            Por ejemplo:
+            checkaer_formulario()
+
+            IMPORTANTE:
+            "funciones.js" debe estar en la misma carpeta que este HTML
+            para que esta ruta funcione tal como está escrita en este archivo
+        -->
         <script src="funciones.js"></script>
     </head>
     <body>
+
+        <!--
+            TÍTULO PRINCIPAL VISIBLE DE LA pÄGINA.
+
+            Aquí se utiliza CSS "inline", es decir, directamente dentro
+            del atributo style del elemento.
+
+            font-family = tipo de letra.
+            font-size = tamaño del texto.
+
+            En proyectos más grandes estos estilos normalmente pueden 
+            trasladarse al archivo style.css, pero aquí se conserva
+            exactamente la estructura trabajada
+        
+        -->
+
         <h1 style="font-family: Arial; font-size: 10px;">
             Lo quieres, te lo vendo
         </h1>
 
+        <!--
+            BARRA DE NAVEGACIÓN BOOTSTRAP.
+
+            navbar
+                Indica que este elemento será una barra de navegación
+
+            navbar-expand-lg
+                La barra se muestra expandida en pantallas grandes.
+                En tamaños menores puede transformarse en un menú desplegable.
+
+            bg-primary
+                Utiliza el color "primary" de Bootstrap como fondo.
+
+            text-light
+                Aplica un color claro al texto
+        -->
+
         <nav class="navbar navbar-expand-lg bg-primary text-light">
+
+            <!--
+                container-fluid ocupa prácticamente todo el ancho disponible.
+
+                Bootstrap utiliza containers para organizar y alinear
+                el contenido de la página.
+            -->
+
             <div class="container-fluid">
+
+                <!--
+                    navbar-brand normalmente representa el nombre,
+                    logotipo o identidad principal del sitio.
+
+                    href="#" no lleva a otra página:
+                    se usa aquí como enlace de ejemplo
+                -->
+
                 <a class="navbar-brand" href="#">Navbar</a>
+
+                <!--
+                    BOTÓN RESPONSIVE DEL NAVBAR
+
+                    Este botón aparece cuando Bootstrap colapsa el menú.
+
+                    data-bs-toggle="collapse"
+                        indica que controlará un elemento colapsable.
+
+                    data-bs-target="#navbarNav"
+                        Indica QUÉ elemento debe abrir/cerrar.
+
+                    Busca un elemento cuyo;
+                    id="navbarNav"
+
+                    aria-* son tributos utilizados principalmente 
+                    para accesibilidad.
+                -->
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!--
+                    Icono visual del botón del menú    
+                -->
                 <span class="navbar-toggler-icon"></span>
                 </button>
+                <!--
+                    CONTENIDO COLAPSABLE DEL NAVBARE.
+
+                    IMPORTANTE:
+                    id="navbarNav" coincide con:
+
+                    data-bs-target="#navbarNav"
+
+                    Esa relación permite que Bootstrap sepa
+                    qué sección debe mostrar u ocultar.
+                -->
                 <div class="collapse navbar-collapse" id="navbarNav">
+                <!--
+                    Lista que contiene los enlaces de navegación.
+                -->
                 <ul class="navbar-nav">
+                    <!--
+                        Elemento individual del menú
+                    -->
                     <li class="nav-item">
+                    <!--
+                        nav-link = estilo Bootstrap para enlaces del navbar.
+                        active = indica visualmente que es la opción activa.
+                        aria.current="page" = indica que corresponde
+                        a la pagina actual.
+                    -->
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+                    <!-- Segunda opción del menú -->
                     <li class="nav-item">
                     <a class="nav-link" href="#">Nosotros</a>
                     </li>
+                    <!-- Tercera opción del menú -->
                     <li class="nav-item">
                     <a class="nav-link" href="#">Tienda</a>
                     </li>
@@ -37,39 +197,194 @@
             </div>
         </nav>
 
+        <!--
+            SECCIÖN de CONTENIDO.
+
+            <section> permite agrupar una parte lógica de la página.
+
+            id="extracto" identifica esta sección de manera única.
+            El ID puede utilizarse posteriormente desde:
+                - CSS
+                - JavaScript
+                - enlaces internos
+        -->
+
         <section id="extracto">
+                <!--
+                    Párrafo con estilos aplicados directamente.
+
+                    font-size = tamaño del texto.
+                    line-height = separacipon entre líneas.
+                    color = color del texto
+                    width: 60vm = ancho equivalente al 60% del ancho
+                                  visible de la ventana del navegador
+                -->
+
             <p style="font-size:14px;line-height: 1.6;color: #333; width:60vw">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi eveniet cum cupiditate ullam laborum iure facilis minima quibusdam sint. Ex natus eveniet delectus laboriosam nihil fugiat quod recusandae. Cum, odit.
             </p>
         </section>
 
+        <!--
+            SECCION del FORMULARIO
+
+            Este bloque contiene los campos que posteriormente serán
+            revisados desde funciones.js
+
+        -->
+
         <section id="formulario">
+            <!--
+            container es una clase Bootstrap utilizada para 
+            contener y ordenar elementos dentro de la página.
+            -->
             <div class="container">
+                <!--
+                    mb-3 = Margin Bottom.
+                    Boostrap agrega un margen inferior para separar
+                    visualmente este campo del siguiente.
+                -->
                 <div class="mb-3">
+
+                    <!--
+                        LABEL del CAMPO CORREO.
+
+                        for="correo" relaciona este label con el elemento
+                        que tenga id="correo"
+                    -->
                     <label for="correo" class="form-label">Email address</label>
+                    <!--
+                        CAMPO CORREO.
+
+                        type="email"
+                            Campo pensado para direcciones de correo.
+
+                        form-control
+                            Clase Bootstrap que da formato al input.
+
+                        formulario
+                            ESTA CLASE ES MUY IMPORTANTE PARA NUESTRO JAVASCRIPT
+
+                            funciones.js busca todos los elementos que tengan:
+                                class="formulario"
+                            Por eso los campos que quereamos validar mediante
+                            esa función necesitan compartir esta clase.
+
+                        id = "correo"
+                            Identificador único del campo.
+
+                            JavaScript posteriomente puede imprimir este ID
+                            para saber qué campo está vacío
+
+                        placeholder
+                            Texto de ejemplo que aparece mientras el campo
+                            no contiene información
+
+
+                    -->
                     <input type="email" class="form-control formulario" id="correo" placeholder="name@example.com">
                 </div>
+                <!-- Campo de teléfono -->
                 <div class="mb-3">
+                    <!--
+                        El for="telefono" está relacionado con
+                        el input id="telefono"
+                    -->
                     <label for="telefono" class="form-label">Phone number</label>
+                    <!--
+                        Nuevamente posee class="formulario".
+
+                        Esto hace que también sea recuperado por:
+
+                        document.getElementsByClassName('formulario')
+
+                        dentro de funciones.js
+
+                        NOTA:
+                        El código original utiliza type="email" también
+                        para este campo de teléfono. Se conserva tal cual
+                        para no modificar la implementación realizada.
+                    -->
                     <input type="email" class="form-control formulario" id="telefono" placeholder="56912345678">
                 </div>
+                <!-- Campo de texto más grande -->
                 <div class="mb-3">
+                    <!--
+                        Label asociado al textarea mediante:
+                        for="textArea1"
+                        id="textArea1"
+                    -->
                 <label for="textArea1" class="form-label">Cuentanos de ti</label>
+                <!--
+                    textarea permite ingresar texto de varias líneas.
+
+                    form-control
+                        Le aplica formato Bootstrap.
+
+                    formulario
+                        permite que funciones.js lo incluya
+                        dentro de los campos de revisará
+
+                    rews="3"
+                        Altura inicial aproximada de tres líneas
+                -->
                 <textarea class="form-control formulario" id="textArea1" rows="3"></textarea>
                 </div>
             </div>
 
+            <!--
+                Segundo container utuilizado para contener el botón.
+            -->
+
             <div class="container">
+                <!--
+                    BOTÓN DE ENVÍO / PROCESAMIENTO.
+
+                    btn
+                        Clase base para botones BootStrap.
+                    btn-primary
+                        Utiliza el estilo primary de Bootstrap
+                    onclick="checkear_formulario()"
+                        ESTA ES LA CONEXIÓN ENTRE HTML y JAVASCRIPT
+
+                        Cuando el usuario hace clic en el botón,
+                        el navegador busca la función:
+
+                            checkear_formulario()
+
+                        dentro de los archivos JavaScript cargados.
+
+                        En este proyecto esa función está declarada
+                        dentro de funciones.js
+                -->
                 <button type="button" class="btn btn-primary" onclick="checkear_formulario()">Enviar</button>
             </div>
         </section>
 
+        <!--
+            PIE DE PÁGINA
+
+            id="piedepagina"
+                Permite identificar este footer desde CSS o JavaScript
+
+            display:flex
+                Organiza sus elementos utilizando FlexBox.
+
+            justify-content:space-between
+                Distribuye los elementos dejando espacio entre ellos.
+        -->
+
         <footer id="piedepagina" style="display: flex; justify-content: space-between;">
+            <!-- Lista de integrantes / nombres -->
             <ul>
                 <li>Juan Perez</li>
                 <li>Cosme Fulanito</li>
                 <li>Homero simpson</li>
             </ul>
+
+            <!--
+                Texto que queda como otro elemento dentro del FloexBox
+            -->
 
             2026
         </footer>
