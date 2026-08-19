@@ -11,6 +11,8 @@ de manuales, links de interes y "torpedos" para ayudarme en el avance de la asig
 
 ***Empecé este repo luego de la 4ta clase por lo que me saltare hasta la fecha indicada***
 
+-------------------------------------------------------------------------------------------
+
 #### Trabajo Realizado el 18/08/2026
 
 ##### Que vimos
@@ -26,3 +28,5 @@ de manuales, links de interes y "torpedos" para ayudarme en el avance de la asig
     - [ ] Debo Revisar el código actualizado que subió el profe para entender la sintaxis
 
 2. ¿Como puedo "Embellecer" de mejor forma mis páginas usando librerías?
+    - [ ] Podría intentar crear una verisón el JavaScript del GameOFLife con html5 y una pag
+        más "bonita para probar"

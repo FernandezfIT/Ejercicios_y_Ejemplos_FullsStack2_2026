@@ -1,0 +1,13 @@
+/* #menu {
+    
+} */
+
+#piedepagina { 
+    background-color: black;
+    color: white;
+}
+
+#extracto { 
+    display: flex;
+    justify-content: center;
+}
